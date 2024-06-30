@@ -1,19 +1,22 @@
-import { useState } from 'react'
-import Admin from '../pages/admin'
-import Cyhome from '../pages/collagehome'
-function App() {
-  const [count, setCount] = useState(0)
+export default App
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Select from '../pages/select';
+import Login from '../pages/login';
+import Signup from '../pages/signup';
+import Cyhome from '../pages/Collages/collagehome';
 
+
+function App() {
   return (
     <>
-       <BrowserRouter>
-       <Routes>
-        <Route path='\' component={<Admin/>}/>
-        <Route path='\admin' component={<Cyhome/>}/>
-       </Routes>
-       </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<Select/>}/>
+          <Route path='/login' element={<Login/>}/>
+          <Route path='/admin' element={<Cyhome/>}/>
+          <Route path='/signup' element={<Signup/>}/>
+        </Routes>
+      </BrowserRouter>
     </>
-  )
+  );
 }
-
-export default App
